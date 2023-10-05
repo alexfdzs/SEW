@@ -4,17 +4,18 @@
 <head>
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
-    <title>Sobre mi</title>
+    <title>Escritorio Virtual - Sobre mi</title>
     <meta name ="author" content ="Álex Fernández Salé" />
     <meta name ="description" content ="Página de inicio de mi escritorio virtual" />
     <meta name ="keywords" content ="inicio, escritorio, virtual" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="icon" href="multimedia/imagenes/favicon.ico"/>
 </head>
 
 <body>
-    <!-- Datos con el contenidos que aparece en el navegador -->
+    <!-- Datos con el contenido que aparece en el navegador -->
     <nav>
         <a accesskey="I" tabindex="1" href="index.html">Inicio</a>
         <a accesskey="S" tabindex="2" href="sobremi.html">Sobre mi</a>
@@ -25,42 +26,150 @@
         <a accesskey="J" tabindex="7" href="juegos.html">Juegos</a>
     </nav>
 
-    <h1>Sobre mi, autor del escritorio virtual</h1>
-    <h2>Álex Fernández Salé</h2>
-    <h3>UO279375</h3>
-    <h4>UO279375@uniovi.es</h4>
-    <h5>Grado en Ingeniería Informática del Software</h5>
+    <h1>Escritorio Virtual</h1>
+    <h2>Sobre mi, creador de este escritorio virtual</h2>
+    <h3>Datos personales</h3>
+    <p>Álex Fernández Salé</p>
+    <p>UO279375</p>
+    <p>UO279375@uniovi.es</p>
+    <p>Grado en Ingeniería Informática del Software</p>
 
     <p>Soy un alumno de tercer/cuarto año del grado en Ingeniería Informática del Software.</p>
     <p>El campo de la informática que más disfruto es el de la programación, ya sea aplicada a aplicaciones web como aplicaciones multiplataforma.</p>
 
-    <p>Mis aficiones: </p>
+    <p>
+    <picture>
+        <source  media="(max-width:799px)" srcset="multimedia/imagenes/imagen_personal_tablet.png">
+        <source  media="(max-width:495px)" srcset="multimedia/imagenes/imagen_personal_movil.png">
+        <img src="multimedia/imagenes/imagen_personal.png" alt="Imagen personal">
+    </picture>
+    </p>
+
+    <p>
+    <audio controls="controls">
+        <source src="multimedia/audio/presentacion.mp3" type="audio/mp3">
+        <source src="multimedia/audio/presentacion.wav" type="audio/wav">
+    </audio>
+    </p>
+
+    <h4>Mis aficiones: </h4>
     <ul>
         <li>Practicar fútbol americano</li>
         <li>Ir al gimnasio</li>
         <li>Jugar a videojuegos</li>
         <li>Salir con mis amigos</li>
-        <li>Sacar fotos</li>
+        <li>Tocar la guitarra</li>
     </ul>
 
-    <p>Mis cantantes/grupos favoritos:</p>
+    <video controls="controls">
+        <source src="multimedia/video/Odell_Beckham_Catch.mp4" type="video/mp4"/>
+        <source src="multimedia/video/Odell_Beckham_Catch.webm" type="video/webm"/>
+    </video>
+
+    <h4>Mis cantantes/grupos favoritos:</h4>
     <ol>
-        <li>Nil Moliner</li>
-        <li>Dani Fernandez</li>
-        <li>La oreja de Van Gogh</li>
-        <li>David Guetta</li>
-        <li>Zetazen</li>
+        <li>Nil Moliner
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=54-Mb7scbPM">Cien por cien</a></li>
+                <li><a href="https://www.youtube.com/watch?v=8stoHSfLra0">El despertar</a></li>
+                <li><a href="https://www.youtube.com/watch?v=0Ox0I0bZklU">Soldadito de hierro</a></li>
+            </ul>
+        </li>
+        <li>Dani Fernandez
+            <ul>
+                <li>Perdido en Madrid</li>
+                <li>Clima tropical</li>
+                <li>Puñales</li>
+            </ul>
+        </li>
+        <li>La oreja de Van Gogh
+            <ul>
+                <li>Cometas por el cielo</li>
+                <li>El último vals</li>
+                <li>Esa chica</li>
+            </ul>
+        </li>
+        <li>David Guetta
+            <ul>
+                <li>Memories</li>
+                <li>Lovers on the sun</li>
+                <li>Without you</li>
+            </ul>
+        </li>
+        <li>Zetazen
+            <ul>
+                <li>Llórame</li>
+                <li>Me va bonito</li>
+                <li>Pongo yo el precio</li>
+            </ul>
+        </li>
     </ol>
 
-    <p>Mis asignaturas preferidas:</p>
+    <p>Para saber más sobre mis gustos musicales, dejo un enlace a <a href="https://open.spotify.com/user/alexius33092">Mi perfil en Spotify</a></p>
+    
+
+    <h4>Mis asignaturas preferidas:</h4>
     <dl>
-        <dt>Metodología de la Programación</dt>
-        <dt>Repositorios de Información</dt>
-        <dt>Ingeniería del Proceso Software</dt>
-        <dt>Sistemas Distribuidos e Internet</dt>
         <dt>Software para dispositivos Móviles</dt>
+        <dd>Asignatura optativa del primer cuatrimestre. Esta asignatura consiste en el desarrollo de aplicaciones multiplataforma, orientadas para dispositivos
+            Android, ya sean moviles o tabletas. Es la asignatura que más me ha gustado ya que he podido ser creativo en el proyecto.
+        </dd>
+        
+        <dt>Metodología de la Programación</dt>
+        <dd>Asignatura de primer curso, del segundo cuatrimestre. Esta asignatura está centrada en el paradigma de la programación
+            orientada a objetos, incluyendo también una introducción a la programación multihilo.
+        </dd>
+
+        <dt>Repositorios de Información</dt>
+        <dd>Asignatura del tercer curso, del primer cuatrimestre. Esta asignatura se enmarca dentro de la materia de “Sistemas de información y persistencia”.
+            Sus competencias básicas son el manejo de las especificaciones JDBC y JPA, así como la recuperación de información y bases de datos orientadas a grafos.
+        </dd>
+        <dt>Ingeniería del Proceso Software</dt>
+        <dd>Asignatura del tercer curso, del primer cuatrimestre. Esta asignatura se centra en el proceso mediante el cual se diseñan, implementan y modelan 
+            aplicaciones solicitadas por clientes.
+        </dd>
+
+        <dt>Sistemas Distribuidos e Internet</dt>
+        <dd>Asignatura del tercer curso, del segundo cuatrimestre. Esta asignatura pertenece a la materia Sistemas Informáticos, y se refiere al desarrollo de 
+            aplicaciones software siguiendo diferentes framworks.
+        </dd>
     </dl>
 
+
+    
+    <table id="temperaturas">
+        <caption>Temperatura media anual de la ciudad de Madrid en los últimos 10 años</caption>
+        <tr>
+            <th scope="col" id="año"> AÑO</th>
+            <th scope="col" id="2012"> 2012 </th>
+            <th scope="col" id="2013"> 2013 </th>
+            <th scope="col" id="2014"> 2014 </th>
+            <th scope="col" id="2015"> 2015 </th>
+            <th scope="col" id="2016"> 2016 </th>
+            <th scope="col" id="2017"> 2017 </th>
+            <th scope="col" id="2018"> 2018 </th>
+            <th scope="col" id="2019"> 2019 </th>
+            <th scope="col" id="2020"> 2020 </th>
+            <th scope="col" id="2021"> 2021 </th>
+            <th scope="col" id="2022"> 2022 </th>
+        </tr>
+        <tr>
+			<th scope="row" id="temperatura" headers="temp_anual">TEMPERATURA</th>
+			<td headers="temp_anual">15.1</td>
+			<td headers="temp_anual">14.8</td>
+			<td headers="temp_anual">15.8</td>
+			<td headers="temp_anual">15.9</td>
+			<td headers="temp_anual">15.6</td>
+            <td headers="temp_anual">16.0</td>
+            <td headers="temp_anual">15.2</td>
+            <td headers="temp_anual">15.6</td>
+            <td headers="temp_anual">15.6</td>
+            <td headers="temp_anual">15.1</td>
+            <td headers="temp_anual">16.6</td>
+		</tr>
+    </table>
+
+    <h4>Enlaces externos interesantes</h4>
     
     
 </body>
