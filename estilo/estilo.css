@@ -62,3 +62,19 @@ dl dt{
     text-decoration-line: underline;
 }
 
+/** Especifidad 001 */
+table{
+    text-align: center;
+    display: grid;
+}
+
+caption{
+    text-align: left;
+    font-size: 1.2em;
+}
+
+tr,td, th{
+    border: 0.1em outset #000000;
+    padding: 0.05em;
+  }
+
