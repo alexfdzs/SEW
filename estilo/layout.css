@@ -1,0 +1,20 @@
+/*Especificidad 001*/
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+/** Especificidad 002 */
+header h1{
+    text-align: center;
+}
+
+/** Especifidad 002 */
+header nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0.5em;
+}
+
