@@ -1,34 +1,33 @@
 /* datos personales: Alex Fernandez Sale - UO279375 */
 /** Especifidad 001 */
-body{
+body {
     font-family: 'Times New Roman', Times, serif;
     color: #000000;
 }
 
 /** Especifidad 001 */
-h1{
+h1 {
     font-size: 3em;
 }
 
 /** Especifidad 001 */
-h2{
+h2 {
     font-size: 2em;
 }
 
 /** Especifidad 001 */
-h3{
+h3 {
     font-size: 1.5em;
 }
 
 /** Especifidad 001*/
-header{
-
+header {
     /** Hereda color de body (negro) */
     background-color: #E7E1E0;
 }
 
 /** Especifidad 001*/
-a{
+a {
     color: #000000;
 }
 
@@ -38,7 +37,7 @@ a:visited {
 }
 
 /** Especifidad 002*/
-ol li { 
+ol li {
     list-style-type: upper-roman;
 }
 
@@ -48,33 +47,94 @@ ol li ol li {
 }
 
 /** Especifidad 001*/
-ul{
+ul {
     list-style-type: square;
 }
 
 /** Especifidad 012 */
-ul li:nth-child(3){
+ul li:nth-child(3) {
     background-color: #E7E1E0;
 }
 
 /** Especifidad 002 */
-dl dt{
+dl dt {
     text-decoration-line: underline;
 }
 
 /** Especifidad 001 */
-table{
+table {
     text-align: center;
     display: grid;
 }
 
-caption{
+/** Especifidad 001 */
+caption {
     text-align: left;
     font-size: 1.2em;
 }
 
-tr,td, th{
+
+/** Especifidad 001 */
+tr,
+td,
+th {
     border: 0.1em outset #000000;
     padding: 0.05em;
-  }
+}
+
+/** Especificad 002 */
+main section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1ex 2ex;
+    margin: auto;
+    width: 100%;
+}
+
+/**Especificidad 001 */
+meteo {
+    flex: 0 25%;
+    height: 13em;
+    border: 1px solid #000000;
+    padding: 0.5em 0 0 0;
+    margin: 1em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(116, 99, 209);
+}
+
+
+/** Especificidad 002 */
+meteo h4 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/** Especificidad 002 */
+meteo content{
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+}
+
+meteo content data {
+    padding: 1em 0;
+    align-self: left;
+    display: flex;
+    flex-direction: column;
+}
+
+meteo content img {
+    padding: 0 0 2em 2em;
+    position: relative;
+}
+
+meteo content data p {
+    padding: 0.5em 0;
+    margin: 0;
+}
 

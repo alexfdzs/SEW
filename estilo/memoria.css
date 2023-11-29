@@ -1,0 +1,63 @@
+/** Especifidad 001 */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1ex 2ex;
+    margin: auto;
+    width: 70%;
+}
+
+/** Especifidad 001 */
+section h2 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+/** Especifidad 001 */
+article {
+    flex: 0 20%;
+    position: relative;
+    height: 14em;
+    background: #66badf;
+    box-shadow: 0 .25em .15em #0a3d90;
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+/** Especifidad 011 */
+article[data-state='flip'] {
+    transform: rotateY(180deg);
+}
+
+/** Especifidad 011 */
+article[data-state='revealed'] {
+    transform: rotateY(180deg);
+}
+
+/** Especifidad 002 */
+article h3,
+article img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background: #66badf;
+    backface-visibility: hidden;
+}
+
+/** Especifidad 002 */
+article h3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/** Especifidad 002 */
+article img {
+    transform: rotateY(180deg);
+}

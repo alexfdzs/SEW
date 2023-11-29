@@ -1,0 +1,28 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    flex-basis: 0 100%;
+    text-align: center;
+}
+
+main section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 1ex 2ex;
+}
+
+main a {
+    width: 0 25%;
+    padding: 0 ;
+    height: 35em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}

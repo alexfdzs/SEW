@@ -1,20 +1,30 @@
-/*Especificidad 001*/
+/** Especifidad 001 */
 header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
 
-/** Especificidad 002 */
-header h1{
-    text-align: center;
+/** Especifidad 001 */
+nav {
+    align-items: right;
+    display: flex;
+    list-style-type: none;
+    margin: 2em;
+    padding: 0;
 }
 
 /** Especifidad 002 */
-header nav{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0.5em;
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/** Especifidad 001 */
+h1 {
+    text-align: left;
+    margin: 0.7em;
 }
 

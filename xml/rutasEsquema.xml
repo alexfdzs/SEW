@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rutas
+xmlns="http://www.uniovi.es"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.uniovi.es rutas.xsd">
+
+    <ruta nombre="Tanji River Paddle">
+        <tipo>Paisajística</tipo>
+        <medio_transporte>Canoa</medio_transporte>
+        <duracion>PT4H</duracion>
+        <agencia>Trekking Hiking</agencia>
+        <descripcion> Explora esta ruta de ida y vuelta de 7,2-km cerca de Tujering, West Coast. Un
+            corto viaje en canoa por un pequeño río que desemboca en el mar en Tanji.</descripcion>
+        <personas_adecuadas> Personas en buena forma física</personas_adecuadas>
+        <inicio_ruta lugar="Carretera Coastal Road" direccion="9663+27J, Coastal Rd, Tanji, Gambia">
+            <coordenadas latitud="13.360393649810536" longitug="-16.796886725805148" alt_measure="m">
+                8</coordenadas>
+        </inicio_ruta>
+        <referencias>
+            <referencia>
+                https://es.wikiloc.com/rutas-senderismo/tanji-river-paddle-facil-tujering-west-coast-gambia-145371314
+                </referencia>
+            <referencia> https://www.alltrails.com/es/ruta/the-gambia/west-coast/tanji-river-paddle </referencia>
+            <referencia>
+                https://www.tripadvisor.es/Attraction_Review-g3675810-d17473776-Reviews-Gambia_Kayaking-Tanji_West_Coast_Division.html
+                </referencia>
+        </referencias>
+        <recomendacion>7</recomendacion>
+        <hitos>
+            <hito nombre="Tanji River Entrance">
+                <descripcion>Entrada al rio Tanji</descripcion>
+                <coordenadas latitud="13.360171851335481" longitug="-16.796894133622303"
+                    alt_measure="m">8</coordenadas>
+                <distancia dist_measure="km">0</distancia>
+                <galeria_foto>
+                    <foto>
+                        multimedia/Tanji_River_Paddle/Tanji_River_Entrance/tanji_rivier_entrance.png</foto>
+                </galeria_foto>
+            </hito>
+            <hito nombre="Tanji Statue">
+                <descripcion>Estatua que representa las aldeas antiguas que habitaban alrededor del
+                    río Tanji</descripcion>
+                <coordenadas latitud="13.362881713084317" longitug="-16.78921401225453"
+                    alt_measure="m">13</coordenadas>
+                <distancia dist_measure="km">16</distancia>
+                <galeria_foto>
+                    <foto>multimedia/Tanji_River_Paddle/Tanji_Statue/tanji_statue.png</foto>
+                </galeria_foto>
+            </hito>
+            <hito nombre="Fallen Tree">
+                <descripcion>Árbol antiguo caído a la vera del río</descripcion>
+                <coordenadas latitud="13.358817621816417" longitug="-16.784624582863934"
+                    alt_measure="m">20</coordenadas>
+                <distancia dist_measure="km">5.23</distancia>
+                <galeria_foto>
+                    <foto>multimedia/Tanji_River_Paddle/Tanji_Fallen_Tree/tanji_fallen_tree.png</foto>
+                </galeria_foto>
+            </hito>
+            <hito nombre="Final">
+                <descripcion>Entrada al rio Tanji. lugar de final</descripcion>
+                <coordenadas latitud="13.360171851335481" longitug="-16.796894133622303"
+                    alt_measure="m">8</coordenadas>
+                <distancia dist_measure="km">7.21</distancia>
+                <galeria_foto>
+                    <foto>
+                        multimedia/Tanji_River_Paddle/Tanji_River_Entrance/tanji_rivier_entrance.png</foto>
+                </galeria_foto>
+            </hito>
+        </hitos>
+    </ruta>
+
+    <ruta nombre="Kartong">
+        <tipo>Paisajística</tipo>
+        <medio_transporte>A pie</medio_transporte>
+        <duracion>PT2H30M</duracion>
+        <agencia> Carsali</agencia>
+        <descripcion> Paseo por el pueblo de Kartong, pueblo costero en el suroeste de Gambia en la
+            frontera con Senegal.</descripcion>
+        <personas_adecuadas> Cualquiera</personas_adecuadas>
+        <inicio_ruta lugar="Restaurante Doudou's" direccion="Kartong crossing point, Gambia">
+            <coordenadas latitud="13.073584406863601" longitug="-16.743567420853864" alt_measure="m">
+                30</coordenadas>
+        </inicio_ruta>
+        <referencias>
+            <referencia>https://es.wikiloc.com/rutas-a-pie/kartong-gambia-126348141</referencia>
+            <referencia> https://en.wikipedia.org/wiki/Kartung </referencia>
+            <referencia>
+                https://www.conbotasymochila.com/viaje-a-gambia-ii-kartong-y-frontera-con-senegal/ </referencia>
+        </referencias>
+        <recomendacion>8</recomendacion>
+        <hitos>
+            <hito nombre="Restaurante Doudou's">
+                <descripcion>Restaurante situado en Kartong. Lugar de salida y donde poder comprar
+                    comida para la actividad.</descripcion>
+                <coordenadas latitud="13.073584406863601" longitug="-16.743567420853864"
+                    alt_measure="m">30</coordenadas>
+                <distancia dist_measure="km">0</distancia>
+                <galeria_foto>
+                    <foto>multimedia/Kartong/Restaurante_Doudous/restaurante_doudous_1.png</foto>
+                    <foto>multimedia/Kartong/Restaurante_Doudous/restaurante_doudous_2.png</foto>
+                </galeria_foto>
+            </hito>
+            <hito nombre="Arbol pie de nius">
+                <descripcion>Arbol pie de nius.</descripcion>
+                <coordenadas latitud="13.073803872479798" longitug="-16.747011377111054"
+                    alt_measure="m">38</coordenadas>
+                <distancia dist_measure="km">0.7</distancia>
+                <galeria_foto>
+                    <foto>multimedia/Kartong/nius_tree/nius_tree.png</foto>
+                </galeria_foto>
+            </hito>
+            <hito nombre="Pescadores, pelicanos y buitres">
+                <descripcion>Zona donde pescadores descargan el barco. Además, hay pelícanos y
+                    buitres que intentan robar la pesca.</descripcion>
+                <coordenadas latitud="13.072643710275129" longitug="-16.752897632131326"
+                    alt_measure="m">0</coordenadas>
+                <distancia dist_measure="km">1.7</distancia>
+                <galeria_foto>
+                    <foto>multimedia/Kartong/Pescadors/pescadores.png</foto>
+                    <foto>multimedia/Kartong/Pescadors/buitres.png</foto>
+                    <foto>multimedia/Kartong/Pescadors/pelicanos.png</foto>
+                </galeria_foto>
+            </hito>
+            <hito nombre="Final">
+                <descripcion>Restaurante situado en Kartong. Lugar de final.</descripcion>
+                <coordenadas latitud="13.073584406863601" longitug="-16.743567420853864"
+                    alt_measure="m">30</coordenadas>
+                <distancia dist_measure="km">5.23</distancia>
+                <galeria_foto>
+                    <foto>multimedia/Kartong/Restaurante_Doudous/restaurante_doudous_1.png</foto>
+                    <foto>multimedia/Kartong/Restaurante_Doudous/restaurante_doudous_2.png</foto>
+                </galeria_foto>
+            </hito>
+        </hitos>
+    </ruta>
+
+
+    <ruta nombre="JJB a Kumbanyerr East">
+        <tipo>Senderismo y paisajistica</tipo>
+        <medio_transporte>A pie</medio_transporte>
+        <duracion>PT5H</duracion>
+        <agencia> Gernot Henn</agencia>
+        <descripcion> Desde Janjanbureh en la isla Mc Carthy en dirección este hasta Kumbanyerr
+            (final de la isla). Regreso por el mismo camino. Total 13 km.</descripcion>
+        <personas_adecuadas> Personas en buena forma física</personas_adecuadas>
+        <inicio_ruta lugar="Janjanbureh" direccion="G6RP+W43, Janjanbureh, Gambia">
+            <coordenadas latitud="13.54265755161999" longitug="-14.764665918285672" alt_measure="m">
+                7</coordenadas>
+        </inicio_ruta>
+        <referencias>
+            <referencia>
+                https://www.outdooractive.com/en/route/hiking-route/gambia/jjb-to-kumbanyerr-east-on-island/118835332/#dmdtab=oax-tab3
+                </referencia>
+            <referencia> https://en.wikipedia.org/wiki/Janjanbureh </referencia>
+            <referencia>
+                https://gernothenn.wixsite.com/gambia/post/baobab-hiking-trail-progress-report-03</referencia>
+        </referencias>
+        <recomendacion>6</recomendacion>
+        <hitos>
+            <hito nombre="Janjanbureh Health Clinic">
+                <descripcion>Clínica de salud situada en el centro de JanjanBureh. Lugar de inicio.</descripcion>
+                <coordenadas latitud="13.54265755161999" longitug="-14.764665918285672"
+                    alt_measure="m"> 7</coordenadas>
+                <distancia dist_measure="km">0</distancia>
+                <galeria_foto>
+                    <foto>multimedia/JJB/JJB_Clinic/jjb_clinic.jpg</foto>
+                </galeria_foto>
+            </hito>
+            <hito nombre="Kunkilling Forest Park">
+                <descripcion>Parque forestal, establecido el 1 de enero de 1954. Abarca un total de
+                    143 hectáreas.</descripcion>
+                <coordenadas latitud="13.543035921408894" longitug="-14.764012204261391"
+                    alt_measure="m">15</coordenadas>
+                <distancia dist_measure="km">5</distancia>
+                <galeria_foto>
+                    <foto>multimedia/JJB/Kunkilling_Park/kunkilling_park_1.jpg</foto>
+                    <foto>multimedia/JJB/Kunkilling_Park/kunkilling_park_2.jpg</foto>
+                </galeria_foto>
+            </hito>
+            <hito nombre="Freedom Tree Monument">
+                <descripcion>El Árbol de la Libertad es un símbolo de crecimiento y continuidad.</descripcion>
+                <coordenadas latitud="13.528505406482957" longitug="-14.723116764565285"
+                    alt_measure="m">20</coordenadas>
+                <distancia dist_measure="km">7.4</distancia>
+                <galeria_foto>
+                    <foto>multimedia/JJB/Fredom_Tree/fredom_tree_1.png</foto>
+                    <foto>multimedia/JJB/Fredom_Tree/fredom_tree_2.png</foto>
+                </galeria_foto>
+            </hito>
+            <hito nombre="Final">
+                <descripcion>Clínica de salud situada en el centro de JanjanBureh. Lugar de final.</descripcion>
+                <coordenadas latitud="13.54265755161999" longitug="-14.764665918285672"
+                    alt_measure="m"> 7</coordenadas>
+                <distancia dist_measure="km">12.6</distancia>
+                <galeria_foto>
+                    <foto>multimedia/JJB/JJB_Clinic/jjb_clinic.jpg</foto>
+                </galeria_foto>
+            </hito>
+        </hitos>
+    </ruta>
+
+</rutas>

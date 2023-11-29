@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" version="2.0">
+<polyline points="10.0,72.0 820.0,67.0 1091.5,60.0 1462.0,72.0" style="fill:white;stroke:red;stroke-width:4" />
+<text x="10.0" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">
+Tanji River Entrance
+</text>
+<text x="820.0" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">
+Tanji Statue
+</text>
+<text x="1091.5" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">
+Fallen Tree
+</text>
+<text x="1462.0" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">
+Final
+</text>
+</svg>

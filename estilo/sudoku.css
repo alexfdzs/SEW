@@ -1,0 +1,42 @@
+/** Especifidad 001 */
+h2{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+/** Especifidad 001 */
+main {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 0;
+    border: 0.4ex solid black;
+}
+
+/** Especifidad 011 */
+p:nth-child(3n){
+    border-right: 0.4ex solid black;
+}
+
+/** Especifidad 021 */
+p:nth-child(n+19):nth-child(-n+27),
+p:nth-child(n+46):nth-child(-n+54){
+    border-bottom: 0.4ex solid black;
+}
+
+/** Especifidad 011 */
+p[data-state='blocked']{
+    /** Hereda color de body (negro) */
+    background-color: #d1caca;
+    font: bold;
+}
+
+/** Especifidad 001 */
+p {
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+    border: 0.2ex solid gray;
+}

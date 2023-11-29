@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <!-- Datos que describen el documento -->
+    <meta charset="UTF-8" />
+    <title>Escritorio Virtual - Memoria</title>
+    <meta name ="author" content ="Álex Fernández Salé" />
+    <meta name ="description" content ="Página del juego 'Sudoku' de mi Escritorio Virtual" />
+    <meta name ="keywords" content ="juego, memoria, escritorio, virtual" />
+    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="estilo/sudoku.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="icon" href="multimedia/imagenes/favicon.ico" />
+
+    <script src="js/sudoku.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a accesskey="I" tabindex="1" href="juegos.html">Juegos</a>
+            
+            <!-- JUEGOS -->
+            <a accesskey="M" tabindex="2" href="memoria.html">Memoria</a>
+            <a accesskey="S" tabindex="3" href="sudoku.html">Sudoku</a>
+        </nav>
+    
+        <h1>Escritorio Virtual</h1>
+    </header>
+
+    <h2>Sudoku</h2>
+    <script>
+        addEventListener("keydown", (event) => {
+            handleKeyDown(event);
+        });
+
+        function handleKeyDown(event){
+            var cellClicked = document.querySelector('[data-state="clicked"]');
+
+            if(cellClicked){
+                if(event.key >= '1' && event.key <= '9'){
+                    sudoku.introduceNumber(event.key);
+                }
+                else{
+                    alert("Debe introducir un número entre 1 y 9.");
+                }
+            }else{
+                alert("Debe seleccionar primero una celda.")
+            }
+        }
+    </script>
+</body>
+<script>sudoku.paintSudoku()</script>
+</html>

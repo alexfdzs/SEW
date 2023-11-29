@@ -1,0 +1,7 @@
+/** Especificidad 001 */ 
+body{
+    background-position:top 2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 8.5em;
+}
