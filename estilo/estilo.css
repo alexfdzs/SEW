@@ -95,7 +95,7 @@ main section {
 /**Especificidad 001 */
 meteo {
     flex: 0 25%;
-    height: 13em;
+    height: auto;
     border: 1px solid #000000;
     padding: 0.5em 0 0 0;
     margin: 1em;
