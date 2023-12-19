@@ -24,14 +24,29 @@
             <a accesskey="N" tabindex="3" href="noticias.html">Noticias</a>
             <a accesskey="A" tabindex="4" href="agenda.html">Agenda</a>
             <a accesskey="M" tabindex="5" href="meteorologia.html">Meteorología</a>
-            <a accesskey="V" tabindex="6" href="viajes.html">Viajes</a>
+            <a accesskey="V" tabindex="6" href="viajes.php">Viajes</a>
             <a accesskey="J" tabindex="7" href="juegos.html">Juegos</a>
         </nav>
-    
+
         <h1>Escritorio Virtual</h1>
     </header>
-
     <h2>Viajes</h2>
-    <p>En desarrollo.</p>
+    <menu data-name="viajes-menu">
+        <h3>Menu</h3>
+        <button data-name="static-map-button" onclick="viaje.getStaticMap()">Obtener mapa estático</button>
+        <button data-name="dynamic-map-button" onclick="viaje.getDynamicMap()">Obtener mapa dinámico</button>
+
+        <p>Selecciona archivo XML: <input type="file" data-name="xml-processing"
+                onchange="viaje.processXML(this.files)" /></p>
+
+        <p>Selecciona archivos KML: <input type="file" data-name="kml-processing"
+                onchange="viaje.processKMLs(this.files)" multiple /></p>
+
+        <p>Selecciona archivos SGV: <input type="file" data-name="svg-processing"
+                onchange="viaje.processSVGs(this.files)" multiple /></p>
+    </menu>
+    <script>viaje.addCarrouselEvents()</script>
+    <main>
+    </main>
 </body>
 </html>
