@@ -48,10 +48,13 @@ class Pais {
         document.write("<p>Coordenadas de la capital: " + this.latCapital + ", " + this.lonCapital + "</p>");
     }
 
+
     getMeteo() {
         var meteoAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${this.latCapital}&lon=${this.lonCapital}&units=metric&appid=c73feae5e14be77475d6522652fd6468`;
 
         document.write('<section></section>');
+
+        $('section').append("<h3>Previsión meteorológica de los 5 próximos días</h3>");
 
         $.ajax({
             dataType: 'json',
@@ -64,6 +67,7 @@ class Pais {
 
                 fiveDays.push(allMeteos[0]);
 
+                //ALTERNATIVA: Para cada día, recorrer todos los elementos y coger la máxima y mínima TOTAL.
                 allMeteos.forEach(element => {
                     if(element.dt_txt.split(' ')[1] == '12:00:00'){
                         fiveDays.push(element);
@@ -72,24 +76,25 @@ class Pais {
                 });
 
                 fiveDays.forEach(day => {
-                    let htmlContent = '<meteo>';
+                    let htmlContent = '<article data-name= "meteo">';
                     htmlContent += `<h4>${day.dt_txt.split(' ')[0]}</h4>`;
-                    htmlContent += `<content>`
-                    htmlContent += `<data>`
-                    htmlContent += `<p>Temperatura máxima: ${day.main.temp_max} ºC</p>`;
-                    htmlContent += `<p>Temperatura mínima: ${day.main.temp_min} ºC</p>`;
-                    htmlContent += `<p>Porcentaje de humedad: ${day.main.humidity} %</p>`;
-                    htmlContent += `<p>Velocidad del viento: ${day.wind.speed} m/s</p>`;
-                    htmlContent += `</data>`;
+                    htmlContent += `<p data-name= "tempMax" >Temperatura máxima: ${day.main.temp_max} ºC</p>`;
+                    htmlContent += `<p data-name= "tempMin" >Temperatura mínima: ${day.main.temp_min} ºC</p>`;
+                    htmlContent += `<p data-name= "humidity" >Porcentaje de humedad: ${day.main.humidity} %</p>`;
+                    htmlContent += `<p data-name= "wind" >Velocidad del viento: ${day.wind.speed} m/s</p>`;
                     htmlContent += `<img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt=${day.weather[0].main}/>`;
-                    htmlContent += `</content>`
                     htmlContent += '</meteo>';
                     
                     $("section").append(htmlContent);
                 });
+            },
+            error: function(){
+                $('section').append("<p>Ha habido un error en la llamada a la API.</p>");
             }
         });
     }
+
+
 }
 
 var gambia = new Pais("Gambia", "Banjul", "13.45274", "-16.57803");

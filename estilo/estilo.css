@@ -1,6 +1,7 @@
 /* datos personales: Alex Fernandez Sale - UO279375 */
 /** Especifidad 001 */
 body {
+    /** Color de fondo por defecto (blanco) */
     font-family: 'Times New Roman', Times, serif;
     color: #000000;
 }
@@ -28,11 +29,13 @@ header {
 
 /** Especifidad 001*/
 a {
+    /** Hereda color de fondo de header (#E7E1E0) */
     color: #000000;
 }
 
 /** Especifidad 011*/
 a:visited {
+    /** Hereda color de fondo de header (#E7E1E0) */
     color: #324A60;
 }
 
@@ -53,6 +56,7 @@ ul {
 
 /** Especifidad 012 */
 ul li:nth-child(3) {
+    /** Hereda color de body (negro) */
     background-color: #E7E1E0;
 }
 
@@ -93,48 +97,75 @@ main section {
 }
 
 /**Especificidad 001 */
-meteo {
+article[data-name="meteo"] {
     flex: 0 25%;
     height: auto;
     border: 1px solid #000000;
-    padding: 0.5em 0 0 0;
+    padding: 0.5em 1em;
     margin: 1em;
     border-radius: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: rgb(116, 99, 209);
+    background-color: #755ff1; /** Hereda color de body (negro) */
+    display: grid;
+    grid-template-areas:
+        "header ."
+        "tempMax  ."
+        "tempMin  img"
+        "humidity  img"
+        "wind  .";
 }
 
-
-/** Especificidad 002 */
-meteo h4 {
-    margin: 0;
-    font-size: 1.5em;
+p[data-name="tempMax"] {
+    grid-area: tempMax;
 }
 
-/** Especificidad 002 */
-meteo content{
-    display: flex;
-    flex-direction: row;
-    justify-content: baseline;
+p[data-name="tempMin"] {
+    grid-area: tempMin;
 }
 
-meteo content data {
-    padding: 1em 0;
-    align-self: left;
-    display: flex;
-    flex-direction: column;
+p[data-name="humidity"] {
+    grid-area: humidity;
 }
 
-meteo content img {
-    padding: 0 0 2em 2em;
-    position: relative;
+p[data-name="wind"] {
+    grid-area: wind;
 }
 
-meteo content data p {
-    padding: 0.5em 0;
-    margin: 0;
+article[data-name="meteo"] img {
+    grid-area: img;
+    max-width: 100%;
+    height: auto;
 }
 
+/** Especificidad 012 */
+article[data-name="meteo"] h4 {
+    grid-area: header;
+    font-size: 2em;
+}
+
+/** Especificidad 011 */
+section[data-name="dynamic-map"] {
+    width:100%; 
+    height:50vw; 
+}
+
+/** Especificidad 011 */
+section[data-name="svg-processing-area"] {
+    width:100%; 
+    height:auto; 
+}
+
+/** Especificidad 001 */
+menu {
+    /** Hereda color de body (negro) */
+    background-color: #E7E1E0;
+    width: 97vw;
+    height: auto;
+    border: 0.1em solid black;
+    margin-right: 0.1em;
+}
+
+/** Especificidad 001 */
+main {
+    width:100%; 
+    height:30vw; 
+}

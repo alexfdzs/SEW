@@ -4,7 +4,7 @@ main {
 }
 
 h2 {
-    flex-basis: 0 100%;
+    flex-basis: 100%;
     text-align: center;
 }
 
@@ -18,9 +18,9 @@ main section {
 }
 
 main a {
-    width: 0 25%;
-    padding: 0 ;
-    height: 35em;
+    width: 25%;
+    padding: 2em ;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;

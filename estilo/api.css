@@ -1,0 +1,56 @@
+main {
+    display: grid;
+    grid-template-areas:
+    "headline"
+    "section";
+}
+
+
+h2 {
+    grid-area: "h2";
+    text-align: center;
+}
+
+
+main section {
+    width: 100%;
+    grid-area: "section";
+    display: grid;
+    height: auto;
+    grid-template-areas:
+        "input canvas canvas"
+        "png canvas canvas"
+        "svg canvas canvas";
+}
+
+canvas {
+    grid-area: "canvas";
+    width: auto;
+    height: auto;
+    background-color: antiquewhite;
+    border: 0.1em solid black;
+
+    margin: 0.5em;
+}
+
+input {
+    grid-area: "input";
+}
+
+button {
+    margin: 0.1em;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button [data-name="save"]{
+    grid-area: "png";
+}
+
+button [data-name="svg"]{
+    grid-area: "svg";
+}

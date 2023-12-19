@@ -5,7 +5,7 @@ class Sudoku {
     strHard = '"8.4.71.9.976.3....5.196....3.7495...692183...4.5726..92483591..169847...753612984"'
 
     constructor() {
-        this.strBoard = this.strEasy;
+        this.strBoard = this.strHard;
         this.rows = 9;
         this.columns = 9;
         this.board = new Array();

@@ -1,18 +1,24 @@
 <!DOCTYPE HTML>
 
 <html lang="es">
+
 <head>
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <title>Escritorio Virtual - Noticias</title>
-    <meta name ="author" content ="Álex Fernández Salé" />
-    <meta name ="description" content ="Página de inicio de mi escritorio virtual" />
-    <meta name ="keywords" content ="inicio, escritorio, virtual" />
-    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Álex Fernández Salé" />
+    <meta name="description" content="Página de noticias de mi escritorio virtual" />
+    <meta name="keywords" content="noticias, escritorio, virtual" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/noticias.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/noticias.js"></script>
 </head>
 
 <body>
@@ -24,17 +30,39 @@
             <a accesskey="N" tabindex="3" href="noticias.html">Noticias</a>
             <a accesskey="A" tabindex="4" href="agenda.html">Agenda</a>
             <a accesskey="M" tabindex="5" href="meteorologia.html">Meteorología</a>
-            <a accesskey="V" tabindex="6" href="viajes.html">Viajes</a>
+            <a accesskey="V" tabindex="6" href="viajes.php">Viajes</a>
             <a accesskey="J" tabindex="7" href="juegos.html">Juegos</a>
         </nav>
-    
+
         <h1>Escritorio Virtual</h1>
     </header>
 
     <main>
         <h2>Noticias</h2>
-        <p>En desarrollo.</p>
+        <section data-name="seeNews">
+            <h3>Leer Noticias</h3>
+        </section>
+        <p><input type="file" onchange="noticias.readInputFile(this.files);" /></p>
+
+        <section data-name="addNew">
+            <h3>Añadir noticia</h3>
+            <form>
+                <label for="titular">Titular:</label>
+                <input type="text" id="titular" name="titular" required>
+
+                <label for="subtitulo">Subtítulo:</label>
+                <input type="text" id="subtitulo" name="subtitulo" required>
+
+                <label for="contenido">Contenido:</label>
+                <textarea name="contenido" id="contenido" rows="4" required></textarea>
+
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" name="autor" required>
+            </form>
+            <button onclick="noticias.addNew()"> Enviar </button>
+        </section>
     </main>
 
 </body>
+
 </html>

@@ -1,0 +1,89 @@
+/** Especifidad 002*/
+ol li {
+    list-style-type: decimal;
+}
+
+/** Especifidad 004*/
+ol li ol li {
+    list-style: decimal;
+}
+
+/** Especifidad 001*/
+ul {
+    list-style-type: square;
+}
+
+/** Especifidad 012 */
+ul li:nth-child(3) {
+    /** Hereda color de body (negro) */
+    background-color: #FFFFFF;
+    /** QUITO EL BACKGROUND DE ESTILOS.CSS */
+}
+
+/** Especifidad 001 */
+article {
+    width: 100%;
+    max-width: 100vh;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    /* <===  */
+    border-radius: 1em;
+}
+
+/** Especifidad 002 */
+article h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-size: 2em;
+}
+
+/** Especifidad 001 */
+img {
+    width: 100%;
+    max-width: 100vh;
+    height: 60vh;
+    position: absolute;
+    transition: all 0.5s;
+    object-fit: cover;
+    border-radius: 0.5em;
+}
+
+/** Especifidad 001 */
+article button {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    background-color: #fff;
+    font-size: 1em;
+}
+
+/** Especifidad 011 */
+button[data-action=prev] {
+    top: 50%;
+    left: 2%;
+}
+
+/** Especifidad 011 */
+button[data-action=next] {
+    top: 50%;
+    right: 2%;
+}
+
+/** Especifidad 001 */
+section{
+    display: flex;
+    flex-direction: row;
+}
+
+/** Especificidad 002 */
+section p {
+    margin: auto;
+    text-align: center;
+}

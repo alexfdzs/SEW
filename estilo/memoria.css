@@ -19,6 +19,7 @@ article {
     flex: 0 20%;
     position: relative;
     height: 14em;
+    /** Hereda color de body (negro) */
     background: #66badf;
     box-shadow: 0 .25em .15em #0a3d90;
     cursor: pointer;
@@ -45,6 +46,7 @@ article img {
     height: 100%;
     position: absolute;
     border-radius: 5px;
+    /** Hereda color de body (negro) */
     background: #66badf;
     backface-visibility: hidden;
 }

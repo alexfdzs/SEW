@@ -9,7 +9,7 @@ header {
 
 /** Especifidad 001 */
 nav {
-    align-items: right;
+    align-items: end;
     display: flex;
     list-style-type: none;
     margin: 2em;

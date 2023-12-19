@@ -1,0 +1,88 @@
+/** Especifidad 001 */
+h2 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+/** Especifidad 001 */
+main {
+    width: 70vw;
+    height: auto;
+    margin: auto;
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 0;
+    border: 0.4ex solid black;
+}
+
+/** Especifidad 011 */
+p[data-state='blocked'] {
+    /** Hereda color de body (negro) */
+    background-color: #d1caca;
+    font: bold;
+}
+
+/** Especifidad 011 */
+p[data-state='empty'] {
+    /** Hereda color de body (negro) */
+    background-color: #000000;
+}
+
+/** Especifidad 001 */
+p {
+    width: auto;
+    height: 2.5em;
+    padding: 0.5em;
+    margin: 0;
+    text-align: center;
+    border: 0.1em solid black;
+}
+
+/* Especifidad 011 */
+section[data-type=botonera] {
+    display: none;
+    /* Oculta la botonera por defecto */
+}
+
+@media screen and (max-width: 799px) {
+
+    /* Especifidad 011 */
+    section[data-type=botonera] {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    /* Especifidad 012 */
+    section[data-type=botonera] h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Especifidad 012 */
+    section[data-type=botonera] button {
+        width: calc(15% - 1em);
+        height: 4em;
+        text-align: center;
+        background-color: #000;
+        color: #FFF;
+    }
+}
+
+/** Especificidad 001 */
+form {
+    max-width: 30vw;
+    margin: 0.2em;
+}
+
+
+/** Especificidad 002 */
+form input {
+    width: 30vw; 
+    margin: 0.2em; 
+    padding: 0.2em;
+    box-sizing: border-box;
+}

@@ -6,8 +6,8 @@ h2{
 
 /** Especifidad 001 */
 main {
-    width: 500px;
-    height: 500px;
+    width: 50vw;
+    height: 80vh;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(9, 1fr);

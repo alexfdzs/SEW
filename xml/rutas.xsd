@@ -94,7 +94,7 @@
       <xs:simpleContent>
         <xs:extension base="xs:float">
           <xs:attribute name="latitud" type="xs:float" use="required" />
-          <xs:attribute name="longitug" type="xs:float" use="required" />
+          <xs:attribute name="longitud" type="xs:float" use="required" />
           <xs:attribute name="alt_measure" type="xs:string" use="required" />
         </xs:extension>
       </xs:simpleContent>

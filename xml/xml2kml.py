@@ -21,7 +21,7 @@ def epilogoKML(archivo):
     archivo.write("</coordinates>\n")
     archivo.write("<altitudeMode>relativeToGround</altitudeMode>\n")
     archivo.write("</LineString>\n")
-    archivo.write("<Style> id='lineaRoja'>\n") 
+    archivo.write("<Style id='lineaRoja'>\n") 
     archivo.write("<LineStyle>\n") 
     archivo.write("<color>#ff0000ff</color>\n")
     archivo.write("<width>5</width>\n")
@@ -35,7 +35,7 @@ def decodificaCoordenadas(ruta):
     coordenadas_hitos = []
     for hito in ruta.findall('.//{http://www.uniovi.es}hito'):
         latitud = hito.find('.//{http://www.uniovi.es}coordenadas').attrib['latitud']
-        longitud = hito.find('.//{http://www.uniovi.es}coordenadas').attrib['longitug']
+        longitud = hito.find('.//{http://www.uniovi.es}coordenadas').attrib['longitud']
         coordenadas_hitos.append((float(longitud), float(latitud)))
     return coordenadas_hitos
   
