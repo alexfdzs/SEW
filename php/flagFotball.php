@@ -280,22 +280,36 @@ class FlagFootball
 
     function importLiga($nombre, $localidad)
     {
+        $nombre = trim($nombre);
+        $localidad = trim($localidad);
+
         $mysqli = new mysqli($this->server, $this->user, $this->pass, $this->dbname);
 
-        $sql = 'select count(*) from liga where nombre = ? and localidad = ?';
+        $sql = 'select * from liga where nombre = ? and localidad = ?';
         $smnt = $mysqli->prepare($sql);
         $smnt->bind_param('ss', $nombre, $localidad);
 
         $smnt->execute();
         $result = $smnt->get_result();
 
-        if ($result->num_rows == 0) {
+        if ($result->num_rows == 0 ) {
+            
             $this->addLigas($nombre, $localidad);
         }
+
+        $mysqli->close();
+
+        $this->getLigas();
     }
 
     function importEquipo($nombre, $ciudad, $nombreLiga)
     {
+
+        $nombre = trim($nombre);
+        $ciudad = trim($ciudad);
+        $nombreLiga = trim($nombreLiga);
+
+
         $mysqli = new mysqli($this->server, $this->user, $this->pass, $this->dbname);
 
         $sqlLiga = 'select id_liga from liga where nombre = ?';
@@ -304,22 +318,30 @@ class FlagFootball
         $smntLiga->execute();
         $resultLiga = $smntLiga->get_result();
 
-        $sqlEquipo = 'select count(*) from equipo where nombre = ?';
+        $sqlEquipo = 'select * from equipo where nombre = ?';
         $smntEquipo = $mysqli->prepare($sqlEquipo);
         $smntEquipo->bind_param('s', $nombre);
         $smntEquipo->execute();
         $resultEquipo = $smntEquipo->get_result();
 
         if ($resultLiga->num_rows > 0 && $resultEquipo->num_rows == 0) {
+            echo "ENTRA";
             $row = $resultLiga->fetch_assoc();
 
             $this->addEquipos($nombre, $ciudad, $row['id_liga']);
         }
         $mysqli->close();
+        
+        $this->getEquipos();
     }
 
     function importPartido($local, $visitante, $resultado)
     {
+
+        $local = trim($local);
+        $visitante = trim($visitante);
+        $resultado = trim($resultado);
+
         $mysqli = new mysqli($this->server, $this->user, $this->pass, $this->dbname);
 
         $sqlLocal = 'select id_equipo from equipo where nombre = ?';
@@ -338,7 +360,7 @@ class FlagFootball
             $rowLocal = $resultLocal->fetch_assoc();
             $rowVisitante = $resultVisitante->fetch_assoc();
 
-            $sql = 'select count(*) from partido where id_equipo_local = ? and id_equipo_visitante = ? and resultado = ?';
+            $sql = 'select * from partido where id_equipo_local = ? and id_equipo_visitante = ? and resultado = ?';
             $smnt = $mysqli->prepare($sql);
             $smnt->bind_param('dds', $rowLocal['id_equipo'], $rowVisitante['id_equipo'], $resultado);
             $smnt->execute();
@@ -350,10 +372,18 @@ class FlagFootball
         }
 
         $mysqli->close();
+
+        $this->getPartidos();
     }
 
     function importJugador($nombre, $apellido, $numero, $nombre_equipo)
     {
+
+        $nombre = trim($nombre);
+        $apellido = trim($apellido);
+        $nombre_equipo = trim($nombre_equipo);
+
+
         $mysqli = new mysqli($this->server, $this->user, $this->pass, $this->dbname);
 
         $sqlEq = 'select id_equipo from equipo where nombre = ?';
@@ -365,22 +395,28 @@ class FlagFootball
         if ($resultEq->num_rows > 0) {
             $rowEq = $resultEq->fetch_assoc();
 
-            $sql = 'select count(*) from jugador where nombre = ? and apellido = ? and numero = ? and id_equipo = ?';
+            $sql = 'select * from jugador where nombre = ? and apellido = ? and numero = ? and id_equipo = ?';
             $smnt = $mysqli->prepare($sql);
             $smnt->bind_param('ssdd', $nombre, $apellido, $numero, $row['id_equipo']);
             $smnt->execute();
             $result = $smnt->get_result();
 
             if ($result->num_rows == 0) {
-                $this->addJugadores($nombre, $apellido, $numero, $row['id_equipo']);
+                $this->addJugadores($nombre, $apellido, $numero, $rowEq['id_equipo']);
             }
         }
 
         $mysqli->close();
+
+        $this->getJugadores();
     }
 
     function importStats($tds, $eps, $pjs, $nombreJ, $apellidoJ)
     {
+
+        $nombreJ = trim($nombreJ);
+        $apellidoJ = trim($apellidoJ);
+
         $mysqli = new mysqli($this->server, $this->user, $this->pass, $this->dbname);
 
         $sqlJ = 'select id_jugador from jugador where nombre = ? and apellido = ?';
@@ -392,17 +428,20 @@ class FlagFootball
         if ($resultJ->num_rows > 0) {
             $row = $resultJ->fetch_assoc();
 
-            $sql = 'select count(*) from estadisticas where id_jugador = ?';
+            $sql = 'select * from estadisticas where id_jugador = ?';
             $smnt = $mysqli->prepare($sql);
             $smnt->bind_param('d', $row['id_jugador']);
             $smnt->execute();
             $result = $smnt->get_result();
 
             if ($result->num_rows == 0) {
+                echo 'id: '. $row['id_jugador'] . ' tds: '. $tds . ' eps: ' . $eps . ' pjs: '.$pjs;
                 $this->addStats($tds, $eps, $pjs, $row['id_jugador']);
             }
         }
         $mysqli->close();
+
+        $this->getStats();
     }
 
     function addLigas($nombre, $localidad)
@@ -622,8 +661,6 @@ if (count($_POST) > 0) {
     if (isset($_POST["reboot"])) {
         $flag->rebootDB();
         $flag->getDB();
-    } else if (isset($_POST["export"])) {
-        $flag->exportDB();
     } else if (isset($_POST["addLiga"])) {
         $flag->addLigas($_POST['nombre'], $_POST['localidad']);
     } else if (isset($_POST["addEquipo"])) {
@@ -636,7 +673,7 @@ if (count($_POST) > 0) {
         $flag->addStats($_POST['tds'], $_POST['eps'], $_POST['pjs'], $_POST['Jugadores']);
     } else if (isset($_POST["import_ligas"])) {
         $ruta = $_FILES["archivo_csv"]["tmp_name"];
-        $lines = file($ruta_csv);
+        $lines = file($ruta);
 
         foreach ($lines as $line) {
             $data = $data = str_getcsv($line, ', ');
@@ -645,39 +682,39 @@ if (count($_POST) > 0) {
         }
     } else if (isset($_POST['import_equipos'])) {
         $ruta = $_FILES["archivo_csv"]["tmp_name"];
-        $lines = file($ruta_csv);
+        $lines = file($ruta);
 
         foreach ($lines as $line) {
             $data = $data = str_getcsv($line, ', ');
 
-            $flag->importEquipo($data[0], $data[1], $data[3]);
+            $flag->importEquipo($data[0], $data[1], $data[2]);
         }
     } else if (isset($_POST['import_partidos'])) {
         $ruta = $_FILES["archivo_csv"]["tmp_name"];
-        $lines = file($ruta_csv);
+        $lines = file($ruta);
 
         foreach ($lines as $line) {
             $data = $data = str_getcsv($line, ', ');
 
-            $flag->importPartido($data[0], $data[1], $data[3]);
+            $flag->importPartido($data[0], $data[1], $data[2]);
         }
     } else if (isset($_POST['import_jugadores'])) {
         $ruta = $_FILES["archivo_csv"]["tmp_name"];
-        $lines = file($ruta_csv);
+        $lines = file($ruta);
 
         foreach ($lines as $line) {
             $data = $data = str_getcsv($line, ', ');
 
-            $flag->importJugador($data[0], $data[1], $data[3], $data[4]);
+            $flag->importJugador($data[0], $data[1], $data[2], $data[3]);
         }
     } else if (isset($_POST['import_stats'])) {
         $ruta = $_FILES["archivo_csv"]["tmp_name"];
-        $lines = file($ruta_csv);
+        $lines = file($ruta);
 
         foreach ($lines as $line) {
             $data = $data = str_getcsv($line, ', ');
 
-            $flag->importStats($data[0], $data[1], $data[3], $data[4], $data[5]);
+            $flag->importStats($data[0], $data[1], $data[2], $data[3], $data[4]);
         }
     } else if (isset($_POST['export_ligas'])) {
         $flag->export('liga');
@@ -743,35 +780,34 @@ if (count($_POST) > 0) {
         </form>
 
         <h4>Importar</h4>
-        <form action="#" method="post" name="import_ligas">
-            <label for="archivo_csv">Selecciona un archivo CSV para importar ligas:</label>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label for="archivo_csv">Selecciona un archivo CSV:</label>
             <input type="file" id="archivo_csv" name="archivo_csv" accept=".csv" required>
-
             <button type="submit" name="import_ligas">Importar CSV</button>
         </form>
 
-        <form action="#" method="post" name="import_equipos">
+        <form action="#" method="post" name="import_equipos" enctype="multipart/form-data">
             <label for="archivo_csv">Selecciona un archivo CSV para importar equipos:</label>
             <input type="file" id="archivo_csv" name="archivo_csv" accept=".csv" required>
 
             <button type="submit" name="import_equipos">Importar CSV</button>
         </form>
 
-        <form action="#" method="post" name="import_partidos">
+        <form action="#" method="post" name="import_partidos" enctype="multipart/form-data">
             <label for="archivo_csv">Selecciona un archivo CSV para importar partidos:</label>
             <input type="file" id="archivo_csv" name="archivo_csv" accept=".csv" required>
 
             <button type="submit" name="import_partidos">Importar CSV</button>
         </form>
 
-        <form action="#" method="post" name="import_jugadores">
+        <form action="#" method="post" name="import_jugadores" enctype="multipart/form-data">
             <label for="archivo_csv">Selecciona un archivo CSV para importar jugadores:</label>
             <input type="file" id="archivo_csv" name="archivo_csv" accept=".csv" required>
 
             <button type="submit" name="import_jugadores">Importar CSV</button>
         </form>
 
-        <form action="#" method="post" name="import_stats">
+        <form action="#" method="post" name="import_stats" enctype="multipart/form-data">
             <label for="archivo_csv">Selecciona un archivo CSV para importar estadísticas:</label>
             <input type="file" id="archivo_csv" name="archivo_csv" accept=".csv" required>
 
