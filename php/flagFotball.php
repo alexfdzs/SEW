@@ -719,7 +719,7 @@ if (count($_POST) > 0) {
 <body>
     <header>
         <nav>
-            <a accesskey="I" tabindex="1" href="juegos.html">Juegos</a>
+            <a accesskey="I" tabindex="1" href="../juegos.html">Juegos</a>
 
             <!-- JUEGOS -->
             <a accesskey="M" tabindex="2" href="../memoria.html">Memoria</a>
