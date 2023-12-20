@@ -18,9 +18,9 @@ main section {
     display: grid;
     height: auto;
     grid-template-areas:
-        "input png svg"
+        "label input input"
         "canvas canvas canvas"
-        "canvas canvas canvas";
+        "png svg .";
 }
 
 canvas {
@@ -35,6 +35,10 @@ canvas {
 
 input {
     grid-area: "input";
+}
+
+label {
+    grid-area: "label";
 }
 
 button {
