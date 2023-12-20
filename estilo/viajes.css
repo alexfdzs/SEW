@@ -1,3 +1,8 @@
+/** Especificidad 001 */
+menu {
+    padding: 0.5em;
+}
+
 /** Especifidad 002*/
 ol li {
     list-style-type: decimal;

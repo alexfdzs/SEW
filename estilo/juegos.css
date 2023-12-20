@@ -1,13 +1,16 @@
+/** Especificidad 001 */
 main {
     display: flex;
     flex-direction: column;
 }
 
+/** Especificidad 001 */
 h2 {
     flex-basis: 100%;
     text-align: center;
 }
 
+/** Especificidad 002 */
 main section {
     display: flex;
     flex-direction: row;
@@ -17,6 +20,7 @@ main section {
     gap: 1ex 2ex;
 }
 
+/** Especificidad 002 */
 main a {
     width: 45%;
     padding: 2em ;

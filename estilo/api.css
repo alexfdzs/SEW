@@ -1,3 +1,4 @@
+/** Especificidad 001*/
 main {
     display: grid;
     grid-template-areas:
@@ -5,13 +6,13 @@ main {
     "section";
 }
 
-
+/** Especificidad 001*/
 h2 {
     grid-area: "h2";
     text-align: center;
 }
 
-
+/** Especificidad 002*/
 main section {
     width: 100%;
     grid-area: "section";
@@ -23,6 +24,7 @@ main section {
         "png svg .";
 }
 
+/** Especificidad 001*/
 canvas {
     grid-area: "canvas";
     width: auto;
@@ -33,14 +35,17 @@ canvas {
     margin: 0.5em;
 }
 
+/** Especificidad 001*/
 input {
     grid-area: "input";
 }
 
+/** Especificidad 001*/
 label {
     grid-area: "label";
 }
 
+/** Especificidad 001*/
 button {
     margin: 0.1em;
     background-color: #4CAF50;
@@ -55,6 +60,7 @@ button [data-name="save"]{
     grid-area: "png";
 }
 
+/** Especificidad 011*/
 button [data-name="svg"]{
     grid-area: "svg";
 }

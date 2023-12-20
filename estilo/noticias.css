@@ -7,6 +7,7 @@ main section{
     height: auto;
 }
 
+/** Especificidad 001 */
 article {
     background-color: #e6dcdbde;
     padding: 0.1em;
@@ -38,7 +39,7 @@ textarea {
 /** Especificidad 001 */
 button {
     background-color: #4CAF50;
-    color: white;
+    color: black;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
