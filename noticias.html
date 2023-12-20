@@ -42,22 +42,23 @@
         <section data-name="seeNews">
             <h3>Leer Noticias</h3>
         </section>
-        <p><input type="file" onchange="noticias.readInputFile(this.files);" /></p>
+        <label for="noticias">Seleccione un archivo TXT que contenga noticias:</label>
+        <input type="file" id="noticias" onchange="noticias.readInputFile(this.files)"/>
 
         <section data-name="addNew">
             <h3>Añadir noticia</h3>
             <form>
                 <label for="titular">Titular:</label>
-                <input type="text" id="titular" name="titular" required>
+                <input type="text" id="titular" name="titular" required/>
 
                 <label for="subtitulo">Subtítulo:</label>
-                <input type="text" id="subtitulo" name="subtitulo" required>
+                <input type="text" id="subtitulo" name="subtitulo" required/>
 
                 <label for="contenido">Contenido:</label>
                 <textarea name="contenido" id="contenido" rows="4" required></textarea>
 
                 <label for="autor">Autor:</label>
-                <input type="text" id="autor" name="autor" required>
+                <input type="text" id="autor" name="autor" required/>
             </form>
             <button onclick="noticias.addNew()"> Enviar </button>
         </section>

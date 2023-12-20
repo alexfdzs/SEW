@@ -27,6 +27,7 @@
             <a accesskey="S" tabindex="3" href="sudoku.html">Sudoku</a>
             <a accesskey="C" tabindex="4" href="crucigrama.php">Crucigrama</a>
             <a accesskey="D" tabindex="5" href="api.html">Anotador</a>
+            <a accesskey="F" tabindex="6" href="php/flagFotball.php">Flag!</a>
         </nav>
 
         <h1>Escritorio Virtual</h1>
@@ -35,7 +36,8 @@
     <main>
         <h2>Anotador</h2>
         <section>
-            <input type="file" accept="image/*" onchange="api.loadImage(files)" />
+            <label for="img">Seleccione una imagen para anotar:</label>
+            <input type="file" accept="image/*" id="img" onchange="api.loadImage(files)" />
             <button data-name="save" onclick="api.saveAnnotation()">Guardar imagen</button>
             <button data-name="svg" onclick="api.exportToSVG()">Exportar SVG</button>
             <canvas></canvas>

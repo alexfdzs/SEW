@@ -1,0 +1,73 @@
+/** Especificidad 002 */
+menu {
+    padding: 0.5em;
+}
+
+menu button {
+    margin: 0.3em 0.1em;
+}
+
+menu input {
+    margin: 0.3em
+}
+
+
+main {
+    display: grid;
+    grid-template-areas:
+        'ligas ligas'
+        'equipos partidos'
+        'jugadores stats';
+}
+
+section {
+    margin: 0.8em;
+    padding: 0.8em;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+
+    /** Redefino table (ya definida en estilo.css) para tener el formato deseado */
+    width: 100%;
+    border-collapse: collapse;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+/** Especificidad 001 */
+section th,
+section td {
+    /** Hereda color de body en estilo.css (negro) */
+    border: 0.1em solid black;
+    padding: 0.3em;
+    margin:auto;
+    text-align: left;
+    width: fit-content;
+}
+
+/** Especificidad 001 */
+tr:nth-child(1) {
+    /** Hereda color de body en estilo.css (negro) */
+    background-color: #f2f2f2;
+    border: 0.15em solid black;
+}
+
+section form input,
+section form label,
+section form select,
+section form button {
+    margin-top: 0.5em;
+    padding: auto;
+}
+
+section form {
+    height: auto;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    margin: 0.5em;
+}

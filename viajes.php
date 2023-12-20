@@ -131,21 +131,21 @@ $moneda->getCambioMoneda();
         <button data-name="static-map-button" onclick="viaje.getStaticMap()">Obtener mapa estático</button>
         <button data-name="dynamic-map-button" onclick="viaje.getDynamicMap()">Obtener mapa dinámico</button>
 
-        <p>Selecciona archivo XML: <input type="file" data-name="xml-processing"
-                onchange="viaje.processXML(this.files)" /></p>
+        <label for="xml">Seleccione un archivo XML:</label>
+        <input type="file" data-name="xml-processing" id="xml" onchange="viaje.processXML(this.files)" />
 
-        <p>Selecciona archivos KML: <input type="file" data-name="kml-processing"
-                onchange="viaje.processKMLs(this.files)" multiple /></p>
+        <label for="kml">Seleccione archivos KML:</label>
+        <input type="file" data-name="kml-processing" id="kml" onchange="viaje.processKMLs(this.files)" multiple />
 
-        <p>Selecciona archivos SGV: <input type="file" data-name="svg-processing"
-                onchange="viaje.processSVGs(this.files)" multiple /></p>
+        <label for="svg">Seleccione archivos SVG:</label>
+        <input type="file" data-name="svg-processing" id="svg" onchange="viaje.processSVGs(this.files)" multiple />
     </menu>
 
     <?php
-        echo '<section>';
-        $carrusel->printCarrusel();
-        $moneda->printCambioMoneda();
-        echo '</section>';
+    echo '<section>';
+    $carrusel->printCarrusel();
+    $moneda->printCambioMoneda();
+    echo '</section>';
     ?>
     <script>viaje.addCarrouselEvents()</script>
     <main>

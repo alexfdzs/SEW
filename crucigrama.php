@@ -8,7 +8,7 @@ class Record
         $this->pass = "DBPSWD2023";
         $this->dbname = "records";
 
-        $this->mysqli = $mysqli = new mysqli($this->server, $this->user, $this->pass, $this->dbname);
+        $this->mysqli =new mysqli($this->server, $this->user, $this->pass, $this->dbname);
     }
 
     function processRecord($surname, $name, $level, $time)
@@ -93,6 +93,7 @@ if (count($_POST) > 0) {
             <a accesskey="S" tabindex="3" href="sudoku.html">Sudoku</a>
             <a accesskey="C" tabindex="4" href="crucigrama.php">Crucigrama</a>
             <a accesskey="D" tabindex="5" href="api.html">Anotador</a>
+            <a accesskey="F" tabindex="6" href="php/flagFotball.php">Flag!</a>
         </nav>
 
         <h1>Escritorio Virtual</h1>
