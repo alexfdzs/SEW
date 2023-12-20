@@ -35,13 +35,12 @@
 
     <main>
         <h2>Anotador</h2>
-        <section>
-            <label for="img">Seleccione una imagen para anotar:</label>
-            <input type="file" accept="image/*" id="img" onchange="api.loadImage(files)" />
-            <button data-name="save" onclick="api.saveAnnotation()">Guardar imagen</button>
-            <button data-name="svg" onclick="api.exportToSVG()">Exportar SVG</button>
-            <canvas></canvas>
-        </section>
+        <label for="img">Seleccione una imagen para anotar:</label>
+        <input type="file" accept="image/*" id="img" onchange="api.loadImage(files)" />
+        <canvas></canvas>
+        <button data-name="save" onclick="api.saveAnnotation()">Guardar imagen</button>
+        <button data-name="svg" onclick="api.exportToSVG()">Exportar SVG</button>
+        
 
     </main>
     <script src="js/api.js"></script>
